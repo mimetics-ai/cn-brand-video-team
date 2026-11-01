@@ -1,0 +1,169 @@
+{
+  "name": "shotcrew",
+  "version": "1.8.1",
+  "description": "A four-role video team that turns existing footage, product shots and screenshots into review-safe Chinese brand short videos, delivered in both 16:9 and 9:16.",
+  "author": {
+    "name": "董植深（Jason Dong）"
+  },
+  "agents": [
+    "./agents/brand-video-team-lead.md",
+    "./agents/script-writer.md",
+    "./agents/footage-editor.md",
+    "./agents/compliance-reviewer.md",
+    "./agents/audio-designer.md"
+  ],
+  "skills": [
+    "./skills/brand-video-script-cn",
+    "./skills/real-footage-product-video",
+    "./skills/ip-animation-video",
+    "./skills/screenshot-explainer-video",
+    "./skills/ai-video-face-screening",
+    "./skills/video-burned-subtitle-patch",
+    "./skills/tts-model-offline-setup"
+  ],
+  "expertType": "team",
+  "agentName": "brand-video-team-lead",
+  "teamInfo": {
+    "leadAgent": "brand-video-team-lead",
+    "memberAgents": [
+      "script-writer",
+      "footage-editor",
+      "compliance-reviewer",
+      "audio-designer"
+    ]
+  },
+  "displayName": {
+    "en": "ShotCrew",
+    "zh": "AI短视频制片团队"
+  },
+  "profession": {
+    "en": "Industrial AI Video Producer",
+    "zh": "工业化AI短视频制片团队"
+  },
+  "displayDescription": {
+    "en": "We make AI video look like it came from a real production crew, not a blind box. We treat the four fatal flaws of AI editing, plus two services others decline: (1) Review risk - a built-in 117-term ad-law dictionary pins down prohibited superlatives and medical claims first, then catches unsupported bragging, so violations are stopped before launch. (2) Continuity breaks - four-way locking (person, props, set lighting, global color grade): no face swapping between shots, no bottle changing size, no day turning into night. (3) Falling behind - drop in a hit reference video and we extract hook, conflict and twist, then rewrite the structure for your product. (4) Two platforms in one go - landscape and portrait are re-composed separately, not cropped. 5. Narrative shorts: one episode, under 2 minutes, told through ACTION AND OBJECTS — a hand setting a cup down, a worn shoe sole, a jacket on an empty chair; these stick better than faces (that is how we shot our own shorts). Dialogue is welcome: lines stay lines, not narration - the person speaks on camera, and voice, expression and action line up shot by shot, verifiable frame by frame. Each shot carries one action and one camera move; no flicker, no padding with slow motion. Technically, people appear as wardrobe, hands and back views, with no close-up faces: this sidesteps cross-shot face drift and portrait rights. One face acting to camera throughout: we take single-episode trials with shot-by-shot acceptance (no guaranteed results); no 20-episode series with one recurring lead and no cross-episode face locking; each episode is a full build, priced per episode. 6. Footage rescue: clip already generated but has garbled text, continuity breaks or mismatched blocking? Repair before re-generating — one regenerated shot costs about 50-90 credits, a frame-by-frame repair costs zero; we fix what can be fixed and redo what must be, quoted after review.\n[Straight talk] We do not claim cinema-grade films, we do not take scripts longer than 3 minutes, we do not take a 20-episode series with one recurring lead, and 'one face acting throughout' is single-episode trials with shot-by-shot acceptance only. What we deliver: review-safe, continuity-safe, same-day. Measured editing time 3.7-8.3 minutes.",
+    "zh": "像剧组拍的，不像开盲盒抽的。\n专治 AI 剪片 4 个致命伤，外加 2 件别人不接的活：\n1. 防限流：自带 117 个广告法极限词库，先钉死「最」「第一」「治愈」，再抓「无据吹牛」（如「0 酒精」「能顶 3-7 天」），拦在上线前。\n2. 防穿帮：四维锁定——人物长相、产品道具、场景光影、全局色调。拒绝一集换一张脸、瓶子忽大忽小、窗外白天变黑夜。\n3. 防落伍：丢一条爆款参考片，自动拆「钩子-冲突-反转」，照结构重写你的文案。\n4. 一次做对两个平台：横竖双画幅各自重构图，不是暴力裁切。\n5. 叙事片：单集、2 分钟以内，用动作和物件讲故事——一只手把茶杯放下、一双鞋底磨偏、一件挂在空椅子上的外套，这些比脸更让人记住（我们自己的短剧就是这么拍的）。\n   有台词也做：台词不压成旁白——人物在镜头里说话，声音、表情、动作三样对得上，逐镜可以指给你看对不对。\n   每个镜头只走一个动作、一种运镜，画面不抖不闪、不靠慢镜头凑时长。\n   技术上：人物以衣服、手、背影呈现，不做正脸特写，既避开跨镜换脸，也避开真人肖像权。\n   「一张脸对着镜头演到底」可接单集试制、逐镜验收（不承诺稳定效果）；20 集同一个主角和跨集同脸不接；每集全量制作、按集计价。\n6. 救片：片子已生成但有乱码、穿帮、动作接不上？先修再谈重做——重生成一镜约 50~90 积分，逐帧修片 0 积分；能修的修、该重做的重做，看片后报价。\n【坦白局】\n不吹「院线级大电影」，不接 3 分钟以上长篇，不接「20 集同一个主角」；「一张脸演到底」只做单集试制、逐镜验收。\n主打：安全过审、多镜头不穿帮、当天交付。\n品牌片实测加工 3.7~8.3 分钟；叙事片另算，一集半天起。能做与不能做，开工前说清，不让你花冤枉钱。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "en": "I have a batch of product footage — cut me a review-safe promo video, in both landscape and portrait.",
+    "zh": "我有一批产品实拍素材，帮我剪一支能过审的招商短片，横版和竖版都要。"
+  },
+  "plugin": "shotcrew",
+  "tags": [
+    {
+      "en": "Short Video Production",
+      "zh": "短视频制作"
+    },
+    {
+      "en": "Video Compliance Review",
+      "zh": "视频合规审查"
+    },
+    {
+      "en": "E-commerce Video",
+      "zh": "带货视频"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "I have a batch of product footage — cut me a review-safe promo video, in both landscape and portrait.",
+      "zh": "我有一批产品实拍素材，帮我剪一支能过审的招商短片，横版和竖版都要。"
+    },
+    {
+      "en": "Frame-by-frame check this video for AI-generated faces, advertising law violations and burned-in subtitle typos, and give me an evidence-grade report.",
+      "zh": "帮我逐帧检查这条片子：AI 生成面孔、广告法极限词、烧录字幕错字，出一份可复核的取证报告。"
+    },
+    {
+      "en": "Write a 45-second storyboard script for this product's brand short video, with duration and speech-rate assertions.",
+      "zh": "给这款产品写一条 45 秒品牌短视频的分镜脚本，含时长与语速断言。"
+    }
+  ],
+  "members": [
+    {
+      "id": "brand-video-team-lead",
+      "name": {
+        "en": "Chief Producer",
+        "zh": "制片厂长"
+      },
+      "displayName": {
+        "en": "Cheng Shouzheng",
+        "zh": "程守正"
+      },
+      "profession": {
+        "en": "Executive Producer",
+        "zh": "成片监制"
+      },
+      "avatar": "avatars/brand-video-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "script-writer",
+      "name": {
+        "en": "Lizhen",
+        "zh": "立帧"
+      },
+      "displayName": {
+        "en": "Zhang Lizhen",
+        "zh": "章立帧"
+      },
+      "profession": {
+        "en": "Storyboard Writer",
+        "zh": "脚本编剧"
+      },
+      "avatar": "avatars/script-writer.png",
+      "role": "member"
+    },
+    {
+      "id": "footage-editor",
+      "name": {
+        "en": "Yingzhen",
+        "zh": "映真"
+      },
+      "displayName": {
+        "en": "Lu Yingzhen",
+        "zh": "陆映真"
+      },
+      "profession": {
+        "en": "Footage Editor",
+        "zh": "素材剪辑师"
+      },
+      "avatar": "avatars/footage-editor.png",
+      "role": "member"
+    },
+    {
+      "id": "compliance-reviewer",
+      "name": {
+        "en": "Wuxia",
+        "zh": "无瑕"
+      },
+      "displayName": {
+        "en": "Zhen Wuxia",
+        "zh": "甄无瑕"
+      },
+      "profession": {
+        "en": "Compliance Reviewer",
+        "zh": "合规审查官"
+      },
+      "avatar": "avatars/compliance-reviewer.png",
+      "role": "member"
+    },
+    {
+      "id": "audio-designer",
+      "name": {
+        "en": "Junhe",
+        "zh": "钧和"
+      },
+      "displayName": {
+        "en": "Wen Junhe",
+        "zh": "闻钧和"
+      },
+      "profession": {
+        "en": "Audio Designer",
+        "zh": "配音配乐师"
+      },
+      "avatar": "avatars/audio-designer.png",
+      "role": "member"
+    }
+  ]
+}

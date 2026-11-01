@@ -1,0 +1,37 @@
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 编辑器 / IDE
+.idea/
+.vscode/
+*.swp
+
+# 运行产物（本包不携带任何客户素材或成片）
+_staging/
+_out/
+out/
+*.log
+*.tmp
+
+# 视频 / 音频大件（自行生成的成片与音轨不要提交）
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.m4a
+*.mp3
+
+# 本地卡片与台账产物（samples 里的示例除外）
+card.json
+card.md
+my_proj/

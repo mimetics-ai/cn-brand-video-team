@@ -1,0 +1,65 @@
+name: 跑不通 / Bug
+description: 安装、运行、工具报错——把环境探报告贴进来，八成问题一眼能定位
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **先做这两件事，能省掉一半来回：**
+        1. 跑 `python tools/env_probe.py --json`（macOS/Linux 用 `python3`），把输出整段贴到下面第 1 栏；
+        2. 扫一眼 [KNOWN_LIMITS.md](../blob/main/KNOWN_LIMITS.md) —— 有些"问题"是已声明的限制，不是 bug。
+  - type: textarea
+    id: env
+    attributes:
+      label: 环境探测输出
+      description: 粘贴 `python tools/env_probe.py --json` 的完整输出
+      render: json
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 系统
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS（Apple Silicon）
+        - macOS（Intel）
+        - Linux
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: pyver
+    attributes:
+      label: Python 版本
+      placeholder: 例如 3.12.4（命令行跑 python --version）
+    validations:
+      required: true
+  - type: textarea
+    id: cmd
+    attributes:
+      label: 你执行了什么命令
+      description: 一行一条，原样贴，不要改写路径
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: err
+    attributes:
+      label: 报错原文
+      description: 整段粘贴，包括 Traceback 前几行；不要只贴最后一句
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expect
+    attributes:
+      label: 你期望发生什么
+  - type: checkboxes
+    id: checked
+    attributes:
+      label: 已经确认过
+      options:
+        - label: 我读过 QUICKSTART.md 的「故障排查」表
+        - label: 我确认这不是 KNOWN_LIMITS.md 里已声明的限制

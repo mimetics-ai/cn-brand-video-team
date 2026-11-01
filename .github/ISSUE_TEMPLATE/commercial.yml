@@ -1,0 +1,53 @@
+name: 商用授权
+description: 拿本仓库接单 / 打包进付费产品前，先在这里申请授权（PolyForm Noncommercial 1.0.0）
+title: "[商用授权] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本仓库采用 **PolyForm Noncommercial 1.0.0**：个人学习、研究、教学、公益、给自己家产品拍片都免费；
+        **拿它挣钱需要单独授权**（见 [COMMERCIAL.md](../blob/main/COMMERCIAL.md)）。
+
+        判定只有一条：**这个交付物有没有换来钱。** 换了钱就是商用，不分单子大小。
+  - type: input
+    id: who
+    attributes:
+      label: 你是谁 / 公司名
+      placeholder: 例如：某某文化传播有限公司 / 个人接单
+    validations:
+      required: true
+  - type: dropdown
+    id: biz
+    attributes:
+      label: 业务类型
+      options:
+        - 影视 / 广告公司接单
+        - 个人接单（帮客户做片）
+        - 打包进我的付费产品或 SaaS
+        - 企业内部批量生产营销素材
+        - 二次分发 / 改名再卖
+        - 其他（在下面说明）
+    validations:
+      required: true
+  - type: textarea
+    id: scale
+    attributes:
+      label: 大概什么量级
+      description: 每月几条片 / 服务几个客户 / 多少个账号在用
+      placeholder: 例如：每月 3–5 条 30 秒片，客户以本地建材商为主
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: 具体怎么用（越具体，报价越准）
+      description: 用的是哪部分——五个角色流程、tools/ 里的工具、还是 20 项验收清单
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: 请确认
+      options:
+        - label: 我理解在获得书面授权前，不得将本仓库用于任何商业用途
+          required: true
+        - label: 我理解授权范围以书面回复为准，口头沟通不构成授权
+          required: true
