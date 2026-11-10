@@ -47,8 +47,8 @@
   "avatar": "avatars/team.png",
   "categoryId": "06-ContentCreative",
   "defaultInitPrompt": {
-    "en": "I have a batch of product footage — cut me a review-safe promo video, in both landscape and portrait.",
-    "zh": "我有一批产品实拍素材，帮我剪一支能过审的招商短片，横版和竖版都要。"
+    "en": "I have a batch of product footage - cut me a promo short video in both landscape and portrait, with ad-law risks flagged first.",
+    "zh": "我有一批产品实拍素材，帮我剪一支招商短片，横版和竖版都要，广告法风险先拦一道。"
   },
   "plugin": "shotcrew",
   "tags": [
@@ -67,8 +67,12 @@
   ],
   "quickPrompts": [
     {
-      "en": "I have a batch of product footage — cut me a review-safe promo video, in both landscape and portrait.",
-      "zh": "我有一批产品实拍素材，帮我剪一支能过审的招商短片，横版和竖版都要。"
+      "en": "I have a batch of product footage - cut me a promo short video in both landscape and portrait, with ad-law risks flagged first.",
+      "zh": "我有一批产品实拍素材，帮我剪一支招商短片，横版和竖版都要，广告法风险先拦一道。"
+    },
+    {
+      "en": "I have no footage - use the generative storyboard track to make a 30-second product talking-head video where the person on screen really says this line: \"...\" (write your line here).",
+      "zh": "没有实拍素材，帮我用生成式分镜做一条 30 秒产品口播，画面里的人说出这句台词：「……」（把台词写在这里）。"
     },
     {
       "en": "Frame-by-frame check this video for AI-generated faces, advertising law violations and burned-in subtitle typos, and give me an evidence-grade report.",
