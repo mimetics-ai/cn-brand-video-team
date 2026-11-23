@@ -1,6 +1,6 @@
 ---
 name: tts-model-offline-setup
-description: 在「受限网络 + 无 GPU + 沙箱受限」的 Windows 机器上，把一个开源 AI 模型（尤其声音复刻/TTS 类：CosyVoice 2、GPT-SoVITS 等）从零装到跑通、实测性能，并包成「双击即用」的窗口交付。覆盖：镜像可用性探测、git-lfs batch API 绕开模型仓 403/401、依赖闭包的穷举差集法、pip 被沙箱 SIGTERM 掐死的绕行、venv 被并发 pip 掏空后的判定与重建、CPU-only 的 RTF 实测与产出音频真伪核验、用 tkinter 包 GUI（含 pythonw 下 sys.stdout 为 None 的坑）。触发词：下载安装 CosyVoice、部署开源 TTS、模型权重下载失败、ModelScope 403、model repo 403、Authentication token does not exist、git-lfs smudge failed、pip 装到一半退出、pip 无声消失、dist-info 是空的、batch_wheel 报错、invalid command 'bdist_wheel'、from versions: none、RTF 实测、无显卡跑 TTS、声音复刻环境搭建、装在哪怎么打开、双击即用、给模型做个界面、GUI 启动器、pythonw 无控制台、tkinter 壳。
+description: '在「受限网络 + 无 GPU + 沙箱受限」的 Windows 机器上，把一个开源 AI 模型（尤其声音复刻/TTS 类：CosyVoice 2、GPT-SoVITS 等）从零装到跑通、实测性能，并包成「双击即用」的窗口交付。覆盖：镜像可用性探测、git-lfs batch API 绕开模型仓 403/401、依赖闭包的穷举差集法、pip 被沙箱 SIGTERM 掐死的绕行、venv 被并发 pip 掏空后的判定与重建、CPU-only 的 RTF 实测与产出音频真伪核验、用 tkinter 包 GUI（含 pythonw 下 sys.stdout 为 None 的坑）。触发词：下载安装 CosyVoice、部署开源 TTS、模型权重下载失败、ModelScope 403、model repo 403、Authentication token does not exist、git-lfs smudge failed、pip 装到一半退出、pip 无声消失、dist-info 是空的、batch_wheel 报错、invalid command ''bdist_wheel''、from versions: none、RTF 实测、无显卡跑 TTS、声音复刻环境搭建、装在哪怎么打开、双击即用、给模型做个界面、GUI 启动器、pythonw 无控制台、tkinter 壳。'
 agent_created: true
 ---
 
