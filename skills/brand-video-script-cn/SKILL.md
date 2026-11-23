@@ -235,11 +235,16 @@ msedge --headless=new --disable-gpu --hide-scrollbars \
 
 分镜确认后要逐镜出素材，两条通道都实测过，**先确认哪条真的可用**。
 
-### 8.1 AgentEarth 是 Connector（外部 MCP），新装后**不会自动生效**
+### 8.1 AgentEarth 是官方连接器（依赖已用官方方式声明）
 
-- 配置落在 `~/.workbuddy/mcp.json`，服务名 `agentearth`，`type: "http"`，
-  `headers.X-Api-Key` 写的是 `AGENT_EARTH_API_KEY`。
-  （凭据由 WorkBuddy 从 Token form 注入 MCP 连接，**skill 本身看不见 API key**。）
+- 本专家包已在 `.codebuddy-plugin/plugin.json` 的 `dependencies.connectors` 中
+  **官方声明** `agent-earth` 依赖：召唤本专家时，WorkBuddy 会自行弹出内联引导卡片
+  完成连接，连接完成后才进入对话。**连接由平台负责**——正文不引导用户做任何
+  手动配置或管理页操作，授权环节完全交由平台的内联引导卡片处理。
+- （技术背景，非操作指引）该连接器凭据由平台统一管理，正文与专家本身均接触不到
+  API key；它聚合即梦 Dreamina/Seedream/Seedance、可灵 Kling、通义万相、混元、
+  MiniMax/海螺、智谱 GLM、Google Veo、OpenAI GPT Image/Whisper、SD、FLUX、
+  HeyGen、ElevenLabs —— 覆盖生图 / 图生视频 / 文生视频 / 数字人口播 / 配音 / BGM / 音效。
 - 暴露 5 个工具：`GetAccountOverview` / `RecommendTools` / `ListTools` /
   `GetToolDetail` / `ExecuteTool`。
 - **★ 使用流程**：`RecommendTools({query})` → 读候选的 `tool_url`/`description`/
@@ -248,22 +253,10 @@ msedge --headless=new --disable-gpu --hide-scrollbars \
   ⛔ **`tool_url` 必须原样透传**，禁止修改/重编码/重组。
 - **★ 成功判据是 `isError` 字段**，**不是** `error_no == 0`
   （后者只对 AgentEarth 原生查询工具成立，对 `ExecuteTool` 透传结果不成立）。
-- 能力面：聚合即梦 Dreamina/Seedream/Seedance、可灵 Kling、通义万相、混元、
-  MiniMax/海螺、智谱 GLM、Google Veo、OpenAI GPT Image/Whisper、SD、FLUX、
-  HeyGen、ElevenLabs —— 覆盖生图 / 图生视频 / 文生视频 / 数字人口播 / 配音 / BGM / 音效。
 
-**★ 挂载判据（缺一即未生效，别凭「配置写了」就当作可用）**：
-
-```bash
-cat ~/.workbuddy/mcp-approvals.json          # 空 {} = 未授权
-python -c "import json,io;d=json.load(io.open(r'<home>/.workbuddy/mcp-tool-list.json',encoding='utf-8'));print(len(d.get('entries',{})))"
-```
-
-- `mcp-approvals.json` = `{}` → 用户在**连接器管理页还没点「信任」**；
-- `mcp-tool-list.json` 里那几组工具**不含 agentearth** → 工具没挂上（即便 `mcp.json` 已配好）；
-- 最终判据：**用 ToolSearch 搜一次**。搜不到就是不可用，别猜。
-
-**处置**：告诉用户「请到连接器管理页点『信任』」，**不要反复重试**、不要自己改 approvals 文件。
+**★ 运行时判据**：进入对话后**用 ToolSearch 搜一次**生成工具——搜得到即依赖已连接、
+可直接调用；搜不到即该生成通道当前不可用，**改用备选通道**（见 8.2 内置 VideoGen）
+继续交付。**不要反复重试**，也不要引导用户改动任何本地配置。
 
 ### 8.2 ★ 内置 `VideoGen` 可作备选（参数恰好够用）
 

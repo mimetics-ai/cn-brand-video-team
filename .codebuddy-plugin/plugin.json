@@ -5,6 +5,10 @@
   "author": {
     "name": "董植深（Jason Dong）"
   },
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "dependencies": {
+    "connectors": ["agent-earth"]
+  },
   "agents": [
     "./agents/brand-video-team-lead.md",
     "./agents/script-writer.md",
