@@ -64,6 +64,7 @@ tools/           纯 Python 校验工具，可脱离平台单独用
   ledger.py              制片账本（成本/许可/宣称/资产四账，哈希链防篡改）
   video_selfcheck.py     成片自检（帧数/时长/AI 标识/逐窗音量）
   delivery_evidence_card.md  交付证据卡（缺陷对象化/追溯链阻断/报告指纹与过期/验证幂等/跨版本复算）★v1.12.0–1.14.0
+  model_selection_matrix.md  生成式模型选型矩阵（AgentEarth 实测能力/credits 定价/按镜头决策树）★v1.15.0
   asset_ledger.md        c_/s_/p_/a_ 四类资产台账（叙事片/短剧档）
   task_queue.py          长任务断点续跑
   stock_footage.py       零素材时的参考构图包（强制水印，不得入片）
@@ -97,6 +98,21 @@ samples/         可直接跑的示例文案（不含任何客户素材）
 - ✅ 个人学习、研究、教学、公益、给自己家产品拍片 → **免费，随便用**
 - 💰 **拿它接单赚钱 → 需要商用授权**，见 **[`COMMERCIAL.md`](COMMERCIAL.md)**
 - 拿了钱就算商用，不分单子大小（699 元的单也一样）
+
+### v1.15.0 更新（2026-11-23 · 头部对标升级 · 独立工作副本，未上传）
+
+Head 对标（Codex/Sora2、GitHub、AgentEarth 实测 2467 工具、Kling/Seedance/Veo/配音头部）后的代差补齐。
+判读：**流程管控已是头部，生成式画面与情感化配音落后一代**。本版把两代差补进包：
+1. **生成轨入口分诊**（Phase 1.5b）：默认仍走实拍/截图轨；要"拍不到的画面"才进生成轨，花积分前报预计总额。
+2. **新技能 `generative-shot-production`**：四条硬判据——真动态（静图 zoom 帧间差仅 3–7，t2v 直出 17–94）、
+   AI 水印裁切法（`crop=1820:1010:100:70`）、定妆帧锚点（i2i＋input_fidelity:high）、显式镜头语义映射（防 hero 镜错位）。
+3. **模型选型矩阵 `tools/model_selection_matrix.md`**：AgentEarth 实测的能力/credits 定价决策表。
+4. **情感化旁白引擎判据**：并入 audio-designer——换引擎优先于调参（F0>220Hz 出不来大片声）、响度动态三门诊断、
+   EQ 正确方向、变音 F0 检测、音画情绪同步前移到脚本阶段。
+5. **KNOWN_LIMITS 认知升级**：第1条"零生成式"改为"默认实拍轨＋生成档可选"；第4条跨镜同脸由"技术死结"改为"有条件可解"。
+
+**对外字段（displayDescription／quickPrompts／profession／members）未改**——技术手段 ≠ 卖点。
+⚠️ 本版为**独立工作副本**（`cn-brand-video-team-v1150-work/`），因 v1.14.0 审核冻结期不改冻结包；过审后走正式收编与打包。
 
 ### v1.14.0 更新（2026-11-17 · 回归纪律与跨版本复算收编）
 
@@ -227,7 +243,7 @@ TTS 表演标签层、对白镜验收六条（盲转写逐字命中/机位锁全
 
 ---
 
-## 内置技能（7 个，随包携带）
+## 内置技能（8 个，随包携带）
 
 | 技能 | 用途 |
 |---|---|
@@ -238,6 +254,7 @@ TTS 表演标签层、对白镜验收六条（盲转写逐字命中/机位锁全
 | ai-video-face-screening | 视频「无面孔」双判据筛查（含 `scripts/frames_facecheck.py`） |
 | video-burned-subtitle-patch | 烧录字幕像素级修补 |
 | tts-model-offline-setup | 受限环境装配开源 TTS / 声音复刻 |
+| generative-shot-production | 生成式镜头制作（图生/文生视频）：真动态判据、AI 水印裁切、定妆帧锚点、镜头映射 |
 
 ---
 
